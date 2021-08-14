@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31424.327
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameCatalogue.Domain", "src\GameCatalogue.Domain\GameCatalogue.Domain.csproj", "{827B2330-D0DF-47E5-AA3D-0957F2619ED4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameCatalogue.Domain", "src\GameCatalogue.Domain\GameCatalogue.Domain.csproj", "{827B2330-D0DF-47E5-AA3D-0957F2619ED4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameCatalogue.Application", "src\GameCatalogue.Application\GameCatalogue.Application.csproj", "{018E885E-2B3F-49F8-9AC0-8E7829653145}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameCatalogue.Application", "src\GameCatalogue.Application\GameCatalogue.Application.csproj", "{018E885E-2B3F-49F8-9AC0-8E7829653145}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameCatalogue.Infra.Data", "src\GameCatalogue.Infra.Data\GameCatalogue.Infra.Data.csproj", "{2BF29CD3-791E-4BC5-9D8E-F2B3BBBE6F78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameCatalogue.Infra.Data", "src\GameCatalogue.Infra.Data\GameCatalogue.Infra.Data.csproj", "{2BF29CD3-791E-4BC5-9D8E-F2B3BBBE6F78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameCatalogue.Infra.IoC", "src\GameCatalogue.Infra.IoC\GameCatalogue.Infra.IoC.csproj", "{5F549A51-7039-4169-B09A-390A53BB48A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameCatalogue.Infra.IoC", "src\GameCatalogue.Infra.IoC\GameCatalogue.Infra.IoC.csproj", "{5F549A51-7039-4169-B09A-390A53BB48A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameCatalogue.API", "src\GameCatalogue.API\GameCatalogue.API.csproj", "{0F448671-D1D6-4D49-A162-A7E72E81C9C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameCatalogue.API", "src\GameCatalogue.API\GameCatalogue.API.csproj", "{0F448671-D1D6-4D49-A162-A7E72E81C9C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameCatalogue.Domain.Tests", "src\GameCatalogue.Domain.Tests\GameCatalogue.Domain.Tests.csproj", "{AEAF9227-0C69-4612-950F-A038A260BFFD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{0F448671-D1D6-4D49-A162-A7E72E81C9C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F448671-D1D6-4D49-A162-A7E72E81C9C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F448671-D1D6-4D49-A162-A7E72E81C9C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEAF9227-0C69-4612-950F-A038A260BFFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEAF9227-0C69-4612-950F-A038A260BFFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEAF9227-0C69-4612-950F-A038A260BFFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEAF9227-0C69-4612-950F-A038A260BFFD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
