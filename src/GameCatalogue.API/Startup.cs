@@ -1,3 +1,4 @@
+using GameCatalogue.Infra.IoC;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,7 +26,7 @@ namespace GameCatalogue.API
 
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddInfrastructure(Configuration);
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
