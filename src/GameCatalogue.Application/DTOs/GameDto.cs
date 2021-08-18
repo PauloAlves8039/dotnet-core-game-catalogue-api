@@ -1,6 +1,7 @@
 ﻿using GameCatalogue.Domain.Entities;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace GameCatalogue.Application.DTOs
 {
@@ -37,6 +38,7 @@ namespace GameCatalogue.Application.DTOs
         [DisplayName("Platforms")]
         public int PlatformId { get; set; }
 
+        [JsonIgnore]
         public Platform Platform { get; set; }
     }
 }
