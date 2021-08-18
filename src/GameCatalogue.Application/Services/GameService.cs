@@ -1,8 +1,9 @@
 ﻿using AutoMapper;
 using GameCatalogue.Application.DTOs;
+using GameCatalogue.Application.Games.Commands;
+using GameCatalogue.Application.Games.Queries;
 using GameCatalogue.Application.Interfaces;
-using GameCatalogue.Domain.Entities;
-using GameCatalogue.Domain.Interfaces;
+using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -11,43 +12,61 @@ namespace GameCatalogue.Application.Services
 {
     public class GameService : IGameService
     {
-        private IGameRepository _gameRepository;
         private readonly IMapper _mapper;
+        private readonly IMediator _mediator;
 
-        public GameService(IGameRepository gameRepository, IMapper mapper)
+        public GameService(IMapper mapper, IMediator mediator)
         {
-            _gameRepository = gameRepository ?? throw new ArgumentException(nameof(gameRepository));
             _mapper = mapper;
+            _mediator = mediator;
         }
 
         public async Task<IEnumerable<GameDto>> GetGames()
         {
-            var gamesEntity = await _gameRepository.GetGamesAsync();
-            return _mapper.Map<IEnumerable<GameDto>>(gamesEntity);
+            var gamesQuery = new GetGamesQuery();
+
+            if (gamesQuery == null)
+            {
+                throw new Exception($"Entity could not be loaded.");
+            }
+
+            var result = await _mediator.Send(gamesQuery);
+
+            return _mapper.Map<IEnumerable<GameDto>>(result);
         }
 
         public async Task<GameDto> GetById(int? id)
         {
-            var gameEntity = await _gameRepository.GetByIdAsync(id);
-            return _mapper.Map<GameDto>(gameEntity);
+            var gameByIdQuery = new GetGameByIdQuery(id.Value);
+
+            if (gameByIdQuery == null)
+                throw new Exception($"Entity could not be loaded.");
+
+            var result = await _mediator.Send(gameByIdQuery);
+
+            return _mapper.Map<GameDto>(result);
         }
 
         public async Task Add(GameDto gameDto)
         {
-            var gameEntity = _mapper.Map<Game>(gameDto);
-            await _gameRepository.CreateAsync(gameEntity);
+            var gameCreateCommand = _mapper.Map<GameCreateCommand>(gameDto);
+            await _mediator.Send(gameCreateCommand);
         }
 
         public async Task Update(GameDto gameDto)
         {
-            var gameEntity = _mapper.Map<Game>(gameDto);
-            await _gameRepository.UpdateAsync(gameEntity);
+            var gameUpdateCommand = _mapper.Map<GameUpdateCommand>(gameDto);
+            await _mediator.Send(gameUpdateCommand);
         }
 
         public async Task Remove(int? id)
         {
-            var gameEntity = _gameRepository.GetByIdAsync(id).Result;
-            await _gameRepository.RemoveAsync(gameEntity);
+            var gameRemoveCommand = new GameRemoveCommand(id.Value);
+
+            if (gameRemoveCommand == null)
+                throw new Exception($"Entity could not be loaded.");
+
+            await _mediator.Send(gameRemoveCommand);
         } 
     }
 }
