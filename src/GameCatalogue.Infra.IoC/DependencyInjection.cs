@@ -4,6 +4,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using GameCatalogue.Domain.Interfaces;
 using GameCatalogue.Infra.Data.Repositories;
+using GameCatalogue.Application.Interfaces;
+using GameCatalogue.Application.Services;
+using GameCatalogue.Application.Mappings;
+using System;
+using MediatR;
 
 namespace GameCatalogue.Infra.IoC
 {
@@ -17,6 +22,13 @@ namespace GameCatalogue.Infra.IoC
 
             services.AddScoped<IPlatformRepository, PlatformRepository>();
             services.AddScoped<IGameRepository, GameRepository>();
+            services.AddScoped<IGameService, GameService>();
+            services.AddScoped<IPlatformService, PlatformService>();
+
+            services.AddAutoMapper(typeof(DomainToDtoMappingProfile));
+
+            var myhandlers = AppDomain.CurrentDomain.Load("GameCatalogue.Application");
+            services.AddMediatR(myhandlers);
 
             return services;
         }
