@@ -1,5 +1,6 @@
 ﻿using GameCatalogue.Application.DTOs;
 using GameCatalogue.Application.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ namespace GameCatalogue.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class PlatformsController : ControllerBase
     {
         private readonly IPlatformService _platformService;

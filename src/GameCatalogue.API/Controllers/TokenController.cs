@@ -1,5 +1,6 @@
 ﻿using GameCatalogue.API.Models;
 using GameCatalogue.Domain.Account;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -26,6 +27,7 @@ namespace GameCatalogue.API.Controllers
 
         [HttpPost("CreateUser")]
         [ApiExplorerSettings(IgnoreApi = true)]
+        [Authorize]
         public async Task<ActionResult> CreateUser([FromBody] LoginModel userInfo) 
         {
             var result = await _authentication.RegisterUser(userInfo.Email, userInfo.Password);
@@ -41,6 +43,7 @@ namespace GameCatalogue.API.Controllers
             }
         }
 
+        [AllowAnonymous]
         [HttpPost("LoginUser")]
         public async Task<ActionResult<UserToken>> Login([FromBody] LoginModel userInfo) 
         {
