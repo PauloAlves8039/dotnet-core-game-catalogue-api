@@ -31,6 +31,17 @@ onde é possível adicionar novos usuários para realizar seus respectivos acess
 
 `git clone https://github.com/PauloAlves8039/dotnet-core-game-catalogue-api.git`
 
+## :camera: Diagrama do Banco de Dados
+
+<p align="center"> <img src="https://github.com/PauloAlves8039/dotnet-core-game-catalogue-api/blob/master/src/GameCatalogue.API/assets/img/diagrama-game-catalogue.png" 
+   title="Diagrama do Banco de Dados" /></p>
+Diagrama gerado no Microsoft SQL Server Management Studio, o seu objetivo é exibir a estrutura da base de dados criada no projeto.
+
+## :camera: API
+
+<p align="center"> <img src="https://github.com/PauloAlves8039/dotnet-core-game-catalogue-api/blob/master/src/GameCatalogue.API/assets/img/api.png" /></p>
+Página para a exibição dos endpoints da API utilizando o Swagger.
+
 ## Author
 
 :boy: [Paulo Alves](https://github.com/PauloAlves8039)
