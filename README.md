@@ -15,6 +15,8 @@ Foram adicionados recursos para autenticação e autorização de usuários na a
 [JWT](https://jwt.io/)
 onde é possível adicionar novos usuários para realizar seus respectivos acessos através de credenciais.
 
+## :wrench: Recursos Utilizados
+
 - [Visual Studio v16.9.5](https://visualstudio.microsoft.com/pt-br/)
 - [ASP.NET Core WebAPI](https://docs.microsoft.com/pt-br/aspnet/core/tutorials/first-web-api?view=aspnetcore-5.0&tabs=visual-studio)
 - [C#](https://docs.microsoft.com/pt-br/dotnet/csharp/getting-started/)
