@@ -1,5 +1,7 @@
 <h1 align="center">Game Catalogue</h1>
 
+## :computer: Projeto
+
 Repositório de uma WebAPI desenvolvida para fins acadêmicos, o seu propósito de simular um catálogo pessoal de jogos aplicando conceitos do 
 [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html), 
 esse projeto está sujeito a futuras implemtações de acordo com suas necessidades.
