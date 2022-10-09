@@ -4,7 +4,7 @@
 
 Repositório de uma WebAPI desenvolvida para fins acadêmicos, o seu propósito de simular um catálogo pessoal de jogos aplicando conceitos do 
 [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html), 
-esse projeto está sujeito a futuras implemtações de acordo com suas necessidades.
+esse projeto está sujeito a futuras modificações de acordo com suas necessidades.
 
 Essa API dispõe de um catálago com funcionalidades para inserir, buscar, atualizar e excluir registros em um relacionamento do tipo 1:N (um para muitos)
 onde uma plataforma possui vários jogos, mas um jogo só pertence a uma plataforma dentro desse cenário, já para a criação do banco de dados foram usados o 
