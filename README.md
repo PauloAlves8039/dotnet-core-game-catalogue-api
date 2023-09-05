@@ -2,20 +2,21 @@
 
 ## :computer: Projeto
 
-Repositório de uma WebAPI desenvolvida para fins acadêmicos, o seu propósito de simular um catálogo pessoal de jogos aplicando conceitos do 
+Repositório de uma WebAPI desenvolvida para fins acadêmicos, o seu propósito de simular um `Catálogo` pessoal de jogos aplicando conceitos do 
 [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html), 
 esse projeto está sujeito a futuras modificações de acordo com suas necessidades.
 
-Essa API dispõe de um catálago com funcionalidades para inserir, buscar, atualizar e excluir registros em um relacionamento do tipo 1:N (um para muitos)
-onde uma plataforma possui vários jogos, mas um jogo só pertence a uma plataforma dentro desse cenário, já para a criação do banco de dados foram usados o 
-[Entity Framework Core](https://docs.microsoft.com/pt-br/ef/core/) e os recursos
-do [Code First Migrations](https://docs.microsoft.com/pt-br/ef/ef6/modeling/code-first/migrations/) para essas implementações no
-[SQL Server 2019](https://www.microsoft.com/pt-br/sql-server/sql-server-downloads).
+Essa API dispõe de um catálago com funcionalidades para `inserir`, `buscar`, `atualizar` e `excluir` registros em um relacionamento do tipo `1:N` (um para muitos)
+onde uma plataforma possui vários `Jogos`, mas um jogo só pertence a uma `Plataforma`. 
 
-Foram adicionados recursos para autenticação e autorização de usuários na aplicação com o 
-[ASP .NET Core Identity](https://docs.microsoft.com/pt-br/aspnet/core/security/authentication/identity?view=aspnetcore-5.0&tabs=visual-studio) e o 
-[JWT](https://jwt.io/)
-onde é possível adicionar novos usuários para realizar seus respectivos acessos através de credenciais.
+dentro desse cenário, já para a criação do banco de dados foram usados o [Entity Framework Core](https://docs.microsoft.com/pt-br/ef/core/) e os recursos
+do [Code First Migrations](https://docs.microsoft.com/pt-br/ef/ef6/modeling/code-first/migrations/) para essas implementações no [SQL Server 2019](https://www.microsoft.com/pt-br/sql-server/sql-server-downloads).
+
+Foram adicionados recursos para `Autenticação` e `Autorização` de usuários na aplicação com o 
+[ASP .NET Core Identity](https://docs.microsoft.com/pt-br/aspnet/core/security/authentication/identity?view=aspnetcore-5.0&tabs=visual-studio) e o [JWT](https://jwt.io/) onde é possível adicionar novos usuários para realizar seus respectivos acessos através de credenciais.
+
+A principio foram realizados testes de unidade com o [XUnit](https://xunit.net/) e [FluentAssertions](https://fluentassertions.com/) para as entidades `Games` e  `Platform`, 
+que tiveram validações implementadas em suas respectivas classes usando o conceito de domínios ricos e tratamento de exceções.
 
 ## :wrench: Recursos Utilizados
 
@@ -35,16 +36,16 @@ onde é possível adicionar novos usuários para realizar seus respectivos acess
 
 `git clone https://github.com/PauloAlves8039/dotnet-core-game-catalogue-api.git`
 
-## :camera: Diagrama do Banco de Dados
+## :camera: Screenshots
+
+### Diagrama do Banco de Dados
 
 <p align="center"> <img src="https://github.com/PauloAlves8039/dotnet-core-game-catalogue-api/blob/master/src/GameCatalogue.API/assets/img/diagrama-game-catalogue.png" 
    title="Diagrama do Banco de Dados" /></p>
-Diagrama gerado no Microsoft SQL Server Management Studio, o seu objetivo é exibir a estrutura da base de dados criada no projeto.
 
-## :camera: API
+### API
 
 <p align="center"> <img src="https://github.com/PauloAlves8039/dotnet-core-game-catalogue-api/blob/master/src/GameCatalogue.API/assets/img/api.png" /></p>
-Página para a exibição dos endpoints da API utilizando o Swagger.
 
 ## Author
 
